@@ -1,0 +1,53 @@
+{
+  "inbounds": [
+    {
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth",
+        "udp": true
+      }
+    },
+    {
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "timeout": 0
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "vpn.anyidphoto.com",
+            "port": 40000,
+            "users": [
+              {
+                "id": "0c7d78c5-9beb-4f8d-96e9-0e9504a9013f",
+                "level": 0,
+                "encryption": "none"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "vpn.anyidphoto.com"
+        },
+        "wsSettings": {
+          "headers": {
+            "Host": "vpn.anyidphoto.com"
+          }
+        }
+      }
+    }
+  ]
+}

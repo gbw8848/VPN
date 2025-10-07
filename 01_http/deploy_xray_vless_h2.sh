@@ -2,7 +2,7 @@
 set -euo pipefail
 
 DOMAIN="gbwvpn.anyidphoto.com"
-XRAY_PORT=443
+XRAY_PORT=8443
 XRAY_USER="vless-http2"
 XRAY_CONFIG_DIR="/usr/local/etc/xray"
 XRAY_CONFIG="${XRAY_CONFIG_DIR}/config.json"
